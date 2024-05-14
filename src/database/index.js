@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize';
-import mongoose from 'mongoose'; 
+import mongoose from 'mongoose';
 
 import configDatabase from '../config/database';
 
@@ -21,7 +21,7 @@ class Database {
         );
     }
 
-    mondo() {
+    mongo() {
         this.mongoConection = mongoose.connect(
             'mongodb://localhost:27017/devburger');
     };

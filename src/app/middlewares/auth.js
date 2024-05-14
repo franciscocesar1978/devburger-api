@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import authConfig from '../config/auth';
+import authConfig from '../../config/auth';
 
 
 function authMiddleware(request, response, next) {
@@ -18,11 +18,11 @@ function authMiddleware(request, response, next) {
             }
 
             request.userId = decoded.id;
-
-        });
-    } catch (err) {
-        return response.status(401).json({ error: 'Token is invalid' });
-    }
+            request.userName = decoded.name;
+    });
+} catch (err) {
+    return response.status(401).json({ error: 'Token is invalid' });
+}
 
     return next();
 
