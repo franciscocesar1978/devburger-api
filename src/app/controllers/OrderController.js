@@ -64,4 +64,4 @@ class OrderController {
 
 }
 
-export default new OrderController();
+export default new OrderController(); 
